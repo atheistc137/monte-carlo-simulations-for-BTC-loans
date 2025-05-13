@@ -1,0 +1,7 @@
+# pip install numpy pandas requests tqdm matplotlib
+
+# python loan_simulator.py --symbol BTCUSDT --sims 30000 --plot
+
+# python loan_simulator.py --config my_config.json
+
+
