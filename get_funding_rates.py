@@ -68,7 +68,7 @@ funding_8h.set_index("fundingTime", inplace=True)
 funding_8h["fundingRate"] = funding_8h["fundingRate"].astype(float)
 
 # ── 3. resample to hourly and align with price data ──────────────────────────
-funding_1h = funding_8h["fundingRate"].resample("1h").ffill()
+funding_1h = (funding_8h["fundingRate"] / 8).resample("1h").ffill()
 funding_1h.index = funding_1h.index.tz_convert(None)    # tz‑naïve UTC
 
 # restrict to the price index span and forward‑fill any leading gaps
